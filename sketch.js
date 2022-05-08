@@ -4,7 +4,7 @@ var i;
 
 function preload(){
 pathImg = loadImage("path.png");
-boyImg = loadAnimation("Runner-1.png","Runner-2.png");
+boyImg = loadAnimation("Runner-1.png", "Runner-2.png");
 }
 
 function setup(){
@@ -17,8 +17,8 @@ path.scale = 1.2
 
 //Criando menino que corre 
 boy=createSprite (200, 350)
-boy.addImage(boyImg)
-boy.scale = 0.2
+boy.addAnimation("boyImg", boyImg)
+boy.scale = 0.07
 
 // Criando Boundary (Limite) esquerdo  
 leftBoundary=createSprite(0,0,100,800);
@@ -39,9 +39,9 @@ boy.collide(rightBoundary)
 boy.collide(leftBoundary)
 
  //Reiniciar o fundo
- if(path.y < 400) {
-   path.y = path.width/2
- }
+ if(path.y > 400) { 
+   path.y = height/2;
+  }
 
  drawSprites();
  }
